@@ -1,8 +1,9 @@
 import React from 'react';
 import './County.css'
 const County = (props) => {
-    //console.log(props);
-    const { name, capital, region, population, flag } = props;
+    //console.log(props.country);
+
+    const { name, capital, region, population, flag } = props.country;
     return (
         <div className="box-model">
             <img className="flag-style" src={flag} alt="" />

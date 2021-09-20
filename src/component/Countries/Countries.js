@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import County from '../County/County';
+import './Countries.css'
 
 const Countries = () => {
 
@@ -11,17 +12,15 @@ const Countries = () => {
     }, [])
     return (
         <div>
-            <h2>Hello Baby :{countries.length}</h2>
-            {
-                countries.map(country =>
-                    <County
-                        name={country.name}
-                        capital={country.capital}
-                        population={country.population}
-                        flag={country.flag}
-                        region={country.region}>
-                    </County>)
-            }
+            <h2>Total Number Of Countries : {countries.length}</h2>
+            <div className="grid-style">
+                {
+                    countries.map(country => <County
+                        key={country.alpha3Code}
+                        country={country}
+                    ></County>)
+                }
+            </div>
         </div>
     );
 };
